@@ -28,6 +28,7 @@ namespace _3DBrushCode.Logic.Bootstraps {
             _rootContext.UnityContext.InstallForUnity(unityReferenceView);
             #endif
             
+            _rootContext.GlobalContext.InstallTextureStorageService(unityReferenceView);
             _rootContext.GlobalContext.InstallGameFactory(_rootContext.UnityContext);
             _rootContext.GlobalContext.GameFactory.CreateMiniGame();
         }

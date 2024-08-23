@@ -6,5 +6,7 @@ namespace _3DBrushCode.Views {
     public class ButtonsView : MonoBehaviour {
         public Button rotateButton;
         public List<ButtonByColor> buttonsByColorMap;
+        public Button openSavePopupButton;
+        public Button openLoadPopupButton;
     }
 }
