@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using _3DBrushCode.Logic.Contracts;
 using _3DBrushCode.Logic.Services.ColorSelector;
 using _3DBrushCode.Views;
@@ -34,6 +35,13 @@ namespace _3DBrushCode.Logic.Services.ObjectsPainter {
         
         public void UpdateColor(Color color) {
             _color = color;
+        }
+        
+        public void ClearTexture() {
+            var texture = _currentObject.GetComponent<Renderer>().material.mainTexture as Texture2D;
+            Color[] whitePixels = Enumerable.Repeat(Color.white, texture.width * texture.height).ToArray();
+            texture.SetPixels(whitePixels);
+            texture.Apply();
         }
 
         public void Paint(Vector2 startUV, Vector2 endUV) {

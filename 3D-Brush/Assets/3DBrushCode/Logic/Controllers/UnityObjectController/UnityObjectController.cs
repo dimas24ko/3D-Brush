@@ -66,6 +66,11 @@ namespace _3DBrushCode.Logic.Controllers.UnityObjectController {
         private void BindEvents() {
             _buttonsView.buttonsByColorMap.ForEach(b => b.button.onClick.AddListener(()=> _state = ControlState.Painting));
             _buttonsView.rotateButton.onClick.AddListener(() => _state = ControlState.Rotating);
+            _buttonsView.clearButton.onClick.AddListener(() => ClearTexture());
+        }
+        
+        private void ClearTexture() {
+            _objectPainter.ClearTexture();
         }
 
         private void DoCurrentState(Vector2 lastPos, Vector2 newPos) {

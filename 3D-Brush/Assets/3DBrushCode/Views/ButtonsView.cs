@@ -8,5 +8,6 @@ namespace _3DBrushCode.Views {
         public List<ButtonByColor> buttonsByColorMap;
         public Button openSavePopupButton;
         public Button openLoadPopupButton;
+        public Button clearButton;
     }
 }
